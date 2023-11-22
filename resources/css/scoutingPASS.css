@@ -6,6 +6,26 @@
     src: url("../fonts/alexisv3.ttf") format('truetype');
 }
 
+@font-face{
+    font-family: 'Airfool';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Airfool'), url('../fonts/Airfool.otf') format('opentype');
+}
+
+@font-face{
+    font-family: 'EverLooser';
+    font-style: normal;
+    font-weight: normal;
+    src: local(EverLooser), url('../fonts/EVER\ LOOSER.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Bantayog';
+    font-style: normal;
+    font-weight: normal;
+    src: local(Bantayog), url('../fonts/Bantayog-Regular.woff') format('woff');
+}
 html, body{
     height: 100%;
     width: 100%;
@@ -38,7 +58,7 @@ html, body{
 }
 
 .button {
-    font-family: Alexis;
+    font-family: EverLooser;
     font-size: 16px;
 }
 
@@ -54,10 +74,29 @@ html, body{
 }
 
 #prematchHeader1, #prematchHeader2{
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 50%;
     color: white;
-    border-color: white;
+    /*border-color: rgb(225, 102, 209);*/
     border-width: 4px;
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    padding: 0.4em;
+    /*box-shadow: 0 0 .2rem #fff,
+                0 0 .2rem #fff,
+                0 0 2rem #FF98B0,
+                0 0 0.8rem #FF98B0,
+                0 0 2.8rem #FF98B0,
+                inset 0 0 1.3rem #FF98B0;*/
 }
+
+#prematchHeader2{
+    border: none;
+    box-shadow: none;
+}
+
 
 #qrHeader1, #qrHeader2 {
     color: black;
@@ -108,10 +147,10 @@ html, body{
 }
 
 h1{
-    font-family: Alexis;
+    font-family: Bantayog;
     text-align: center;
-    border-style: groove;
-    border-color: white;
+    border-style: solid;
+    border-color: #FF98B0;
     border-width: 2px;
     font-size: 40px;
     padding: 10px;
@@ -123,11 +162,11 @@ h1{
 }
 
 h2{
-    font-family: Alexis;
+    font-family: Bantayog;
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
     font-weight: 300;
-    font-style: italic;
+    color:#f6c8e1;
 }
 
 .match-label{
@@ -154,9 +193,15 @@ h2{
 }
 
 #nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm, .submitForm, #displayButton, #copyButton {
-    font-family: Alexis;
+    color: #4F65C7;
+    border-color: #4F65C7;
+    border-style: solid;
+    font-family: Bantayog;
     padding: 10px;
-    background-color: rgb(151, 199, 240);
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    background-color: #CAD4FF;
     text-decoration: none;
     display: inline-block;
 }
@@ -222,11 +267,19 @@ input {
     font: roboto;
     color: black;
     background-color: white;
+    border-color: #4F65C7;
+    border-style: solid;
+    border-radius: 5px;
 }
 
 .title {
     width: "50%";
     text-align: right;
+}
+
+td {
+    font-size: 25px;
+    font-family: Bantayog;
 }
 
 .field {
@@ -243,4 +296,18 @@ input {
 #data {
     font-family:'Lucida Console', 'monospace';
     text-align: justify;
+}
+
+#prematchHeader1{
+    font-size: 60px;
+    letter-spacing: 5px;
+}
+
+input{
+    background-color: #CAD4FF;
+}
+
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(150deg, rgba(2,0,36,1) 0%, rgba(237,158,158,1) 0%, rgba(186,229,255,1) 100%);
 }

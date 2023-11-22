@@ -403,7 +403,7 @@ function addText(table, idx, name, data) {
   }
   cell2.classList.add("field");
   var inp = document.createElement("input");
-  inp.setAttribute("id", "input_" + data.code);
+  inp.setAttribute("id", "input_" + data.code); //sets id
   inp.setAttribute("type", "text");
   if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
     inp.setAttribute("name", data.gsCol);
@@ -605,10 +605,10 @@ function addCheckbox(table, idx, name, data) {
 function addElement(table, idx, data) {
   var type = null;
   var name = 'Default Name';
-  if (data.hasOwnProperty('name')) {
+  if (data.hasOwnProperty('name')) {    //name in HTML file = name in Json file
     name = data.name
   }
-  if (data.hasOwnProperty('type')) {
+  if (data.hasOwnProperty('type')) {     //type from Json file referenced
     type = data.type
   } else {
     console.log("No type specified");
@@ -618,36 +618,38 @@ function addElement(table, idx, data) {
     idx = addText(table, idx, name, err);
     return
   }
-  if (type == 'counter') {
+  if (type == 'counter') {    //if else statements to determine what input element to add to website --- all comes from Json file
     idx = addCounter(table, idx, name, data);
-  } else if ((data.type == 'scouter') ||
+  } else if (
+    (data.type == 'scouter') ||
     (data.type == 'event') ||
+    //(data.type == 'testing')||
     (data.type == 'text')
   ) {
-    idx = addText(table, idx, name, data);
+    idx = addText(table, idx, name, data);  //input textboxes for event, text, scouter fields
   } else if ((data.type == 'level') ||
     (data.type == 'radio') ||
     (data.type == 'robot')
   ) {
-    idx = addRadio(table, idx, name, data);
+    idx = addRadio(table, idx, name, data);  //input radio for radio, robot, level fields
   } else if ((data.type == 'match') ||
     (data.type == 'team') ||
     (data.type == 'number')
   ) {
-    idx = addNumber(table, idx, name, data);
+    idx = addNumber(table, idx, name, data);    //number input for match, team, number fields
   } else if ((data.type == 'field_image') ||
     (data.type == 'clickable_image')) {
-    idx = addClickableImage(table, idx, name, data);
+    idx = addClickableImage(table, idx, name, data);    //clickeable image input for field image, clickeable image fields
   } else if ((data.type == 'bool') ||
     (data.type == 'checkbox') ||
     (data.type == 'pass_fail')
   ) {
-    idx = addCheckbox(table, idx, name, data);
+    idx = addCheckbox(table, idx, name, data);  //checkbox input for bool, checkbox, pass_fail fields
   } else if (data.type == 'counter') {
-    idx = addCounter(table, idx, name, data);
+    idx = addCounter(table, idx, name, data);   //counter input for counter field
   } else if ((data.type == 'timer') ||
     (data.type == 'cycle')) {
-    idx = addTimer(table, idx, name, data);
+    idx = addTimer(table, idx, name, data);   //timer input for timer, cycle fields
   } else {
     console.log(`Unrecognized type: ${data.type}`);
   }
@@ -656,14 +658,14 @@ function addElement(table, idx, data) {
 
 function configure() {
   try {
-    var mydata = JSON.parse(config_data);
+    var mydata = JSON.parse(config_data); //parsing Json file --- mydata is reference for all elements on webpage
   } catch (err) {
     console.log(`Error parsing configuration file`)
     console.log(err.message)
     console.log('Use a tool like http://jsonlint.com/ to help you debug your config file')
-    var table = document.getElementById("prematch_table")
+    var table = document.getElementById("prematch_table") // Initializes everything in the table (including initials, match number, etc)
     var row = table.insertRow(0);
-    var cell1 = row.insertCell(0);
+    var cell1 = row.insertCell(0); //adding elements to page
     cell1.innerHTML = `Error parsing configuration file: ${err.message}<br><br>Use a tool like <a href="http://jsonlint.com/">http://jsonlint.com/</a> to help you debug your config file`
     return -1
   }
@@ -713,7 +715,7 @@ function configure() {
   var pmt = document.getElementById("prematch_table");
   var idx = 0;
   pmc.forEach(element => {
-    idx = addElement(pmt, idx, element);
+    idx = addElement(pmt, idx, element);    //addElement is function called to setup 
   });
 
   // Configure auton screen
@@ -795,8 +797,8 @@ function validateData() {
 function getData(dataFormat) {
   var Form = document.forms.scoutingForm;
   var UniqueFieldNames = [];
-  var fd = new FormData();
-  var str = [];
+  var fd = new FormData();    //FormData interface allows you to construct a set of key/value pairs representing form fields and their values in JavaScript.
+  var str = []; //this array contains all the data -- all data is appended to str --- the data displayed when qr code is scanned
 
   switch(checkboxAs) {
     case 'TF':
@@ -827,12 +829,12 @@ function getData(dataFormat) {
     } else {
       var thisFieldValue = thisField.value ? thisField.value.replace(/"/g, '').replace(/;/g,"-") : "";
     }
-    fd.append(fieldname, thisFieldValue)
+    fd.append(fieldname, thisFieldValue) //pushing checkbox information
   })
 
-  if (dataFormat == "kvs") {
+  if (dataFormat == "kvs") {            // for CU_config.js
     Array.from(fd.keys()).forEach(thisKey => {
-      str.push(thisKey + "=" + fd.get(thisKey))
+      str.push(thisKey + "=" + fd.get(thisKey))   // pushing form data from json "thisKey" is referencing each json element fd.get is getting value from website
     });
     return str.join(";")
   } else if (dataFormat == "tsv") {
@@ -846,14 +848,14 @@ function getData(dataFormat) {
 }
 
 function updateQRHeader() {
-  let str = 'Event: !EVENT! Match: !MATCH! Robot: !ROBOT! Team: !TEAM!';
+  let str = 'Event: !EVENT! Match: !MATCH! Robot: !ROBOT! Team: !TEAM!'; // pushing event, match #, robot #, and team to str
 
   if (!pitScouting) {
     str = str
       .replace('!EVENT!', document.getElementById("input_e").value)
       .replace('!MATCH!', document.getElementById("input_m").value)
       .replace('!ROBOT!', document.getElementById("display_r").value)
-      .replace('!TEAM!', document.getElementById("input_t").value);
+      .replace('!TEAM!', document.getElementById("input_t").value); 
   } else {
     str = 'Pit Scouting - Team !TEAM!'
       .replace('!TEAM!', document.getElementById("input_t").value);
@@ -1369,13 +1371,13 @@ function copyData(){
 window.onload = function () {
   let ret = configure();
   if (ret != -1) {
-    let ece = document.getElementById("input_e");
+    let ece = document.getElementById("input_e");  // input_e is used for event for team retrieval from TBA
     let ec = null;
     if (ece != null) {
       ec = ece.value;
     }
     if (ec != null) {
-      getTeams(ec);
+      getTeams(ec); // copies event code into TBA API to get data
       getSchedule(ec);
     }
     this.drawFields();

@@ -9,7 +9,7 @@ var config_data = `
       "code": "s",
       "type": "scouter",
       "size": 5,
-      "maxSize": 5,
+      "maxSize": 5, 
       "required": "true"
     },
     { "name": "Event",
@@ -18,6 +18,12 @@ var config_data = `
       "defaultValue": "2023tnkn",
       "required": "true",
       "disabled": "true"
+    },
+    { "name": "Testing",
+      "code": "te",
+      "type": "scouter",
+      "defaultValue": "hello",
+      "required": "true"
     },
     { "name": "Match Level",
       "code": "l",
@@ -44,6 +50,19 @@ var config_data = `
         "r1": "Red-1",
         "b1": "Blue-1<br>",
         "r2": "Red-2",
+        "b2": "Blue-2<br>",
+        "r3": "Red-3",
+        "b3": "Blue-3"
+      },
+      "required":"true"
+    },
+    { "name": "Test2",
+      "code": "t2",
+      "type": "robot",
+      "choices": {
+        "r1": "a",
+        "b1": "a2<br>",
+        "r2": "a3-2",
         "b2": "Blue-2<br>",
         "r3": "Red-3",
         "b3": "Blue-3"
