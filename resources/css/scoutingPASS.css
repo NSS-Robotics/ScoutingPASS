@@ -43,18 +43,19 @@ html, body{
     font-size: 13px;
     font-style: bold;
     letter-spacing: 1px;
-    border-width: 4px;
+    border-style: none;
+    border-top-style: solid;
     border-color: white;
+    border-width: 3px;
+    padding-top: 50px;
+    margin-top: 30px;
 }
 
 #auton_table, #endgame_table, #teleop_table {
-    font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-    color: black;
+    font-family : Bantayog;
     font-size: 13px;
     font-style: bold;
     letter-spacing: 1px;
-    border-width: 4px;
-    border-color: black;
 }
 
 .button {
@@ -64,7 +65,7 @@ html, body{
 
 #autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
     color: black;
-    border-color: black;
+    border-color: white;
     border-width: 4px;
 }
 
@@ -73,7 +74,7 @@ html, body{
     border-color: white;
 }
 
-#prematchHeader1, #prematchHeader2{
+#prematchHeader1, #prematchHeader2, #autonHeader1{
     margin: auto;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -82,7 +83,7 @@ html, body{
     /*border-color: rgb(225, 102, 209);*/
     border-width: 4px;
     border: 0.2rem solid #fff;
-    border-radius: 2rem;s
+    border-radius: 2rem;
     padding: 0.4em;
     box-shadow: 0 0 .2rem #fff,
                 0 0 .2rem #fff,
@@ -90,6 +91,15 @@ html, body{
                 0 0 0.8rem #FF98B0,
                 0 0 2.8rem #FF98B0,
                 inset 0 0 1.3rem #FF98B0;
+}
+
+#autonHeader1{
+    box-shadow: 0 0 .2rem #fff,
+                0 0 .2rem #fff,
+                0 0 2rem #9793dd,
+                0 0 0.8rem #9793dd,
+                0 0 2.8rem #9793dd,
+                inset 0 0 1.3rem #9793dd;
 }
 
 #prematchHeader2{
@@ -157,15 +167,11 @@ h1{
     font-weight: 350;
 }
 
-#page2, #page4 {
-    color: black;
-}
 
 h2{
     font-family: Bantayog;
     text-align: center;
     font-size: 50px;
-    font-weight: 300;
     color:#f6c8e1;
     text-decoration: underline;
 }
@@ -209,16 +215,16 @@ h2{
 
 #nextButton3, #nextButton4, #nextButton5, #nextButton6, #nextButton7, #nextButton8 {
     font-family: Alexis;
-    background-color: black;
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 10px;
-    color: white;
+    color: rgb(54, 102, 132);
 }
 
 .undoButton, .flipButton {
-    font-family: Alexis;
-    background-color: black;
+    font-family: Bantayog;
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 10px;
-    color: white;
+    color: rgb(54, 102, 132);
     margin-left: 20px;
 }
 
@@ -237,22 +243,9 @@ h2{
 }
 
 #prematch_table{
-    font: Alexis;
     text-align: center;
 }
 
-
-h1 .odd {
-    font-family: Alexis;
-    text-align: center;
-    color: #0AB4EC;
-}
-
-h1 .even {
-    font-family: Alexis;
-    text-align: center;
-    color: #42B333;
-}
 
 table {
     border: 1px solid black;
@@ -265,7 +258,7 @@ td {
 
 input {
     font-size: 16px;
-    font: roboto;
+    font: Bantayog;
     color: rgb(54, 102, 132);
     background-color: rgba(186,229,255,1);
     border-color: rgba(186,229,255,1);
@@ -315,4 +308,13 @@ input{
 body{
     background: rgb(2,0,36);
     background: linear-gradient(150deg, rgba(2,0,36,1) 0%, rgba(237,158,158,1) 0%, rgba(186,229,255,1) 100%);
+}
+
+#auton, #auton h2{
+    color: rgb(118, 116, 165);
+    border-color: white;
+}
+
+#prematchHeader2{
+    font-family: Bantayog;
 }

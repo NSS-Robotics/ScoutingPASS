@@ -2,7 +2,7 @@ var config_data = `
 {
   "dataFormat": "kvs",
   "title": "Scouting PASS 2024",
-  "page_title": "Charged Up",
+  "page_title": "CRESCENDO",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Initials",
@@ -18,12 +18,6 @@ var config_data = `
       "defaultValue": "2023tnkn",
       "required": "true",
       "disabled": "true"
-    },
-    { "name": "Testing",
-      "code": "te",
-      "type": "scouter",
-      "defaultValue": "hello",
-      "required": "true"
     },
     { "name": "Match Level",
       "code": "l",
@@ -78,35 +72,10 @@ var config_data = `
     { "name": "Notes scored<br>speaker",
       "code": "ns",
       "type": "counter"
-    },
-    { "name": "Mobility?",
-      "code": "am",
-      "type": "bool"
-    },
-    { "name": "Docked",
-      "code": "ad",
-      "type":"radio",
-      "choices": {
-        "d": "Docked (not Engaged)<br>",
-        "e": "Engaged<br>",
-        "a": "Attempted but failed<br>",
-        "x": "Not attempted"
-      },
-      "defaultValue": "x"
     }
   ],
   "teleop": [
-    { "name": "Grid Scoring",
-      "code": "tsg",
-      "type": "clickable_image",
-      "filename": "2023/grid_image.png",
-      "dimensions": "9 4",
-      "clickRestriction": "onePerBox",
-      "toggleClick": "true",
-      "showFlip": "false",
-      "showUndo": "false",
-      "shape": "circle 12 black red true"
-    },
+    
     { "name": "Feeder Count<br>(Fed another bot)",
       "code": "tfc",
       "type": "counter"
