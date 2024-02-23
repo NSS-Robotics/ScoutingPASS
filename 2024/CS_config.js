@@ -1,3 +1,5 @@
+//change eventcode to 2024ONOSH/ ONWIN
+
 var config_data = `
 {
   "dataFormat": "kvs",

@@ -1,31 +1,15 @@
-@font-face {
-    font-family: 'Alexis';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Alexis'), url('../fonts/alex.woff') format('woff');
-    src: url("../fonts/alexisv3.ttf") format('truetype');
-}
-
-@font-face{
-    font-family: 'Airfool';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Airfool'), url('../fonts/Airfool.otf') format('opentype');
-}
-
-@font-face{
-    font-family: 'EverLooser';
-    font-style: normal;
-    font-weight: normal;
-    src: local(EverLooser), url('../fonts/EVER\ LOOSER.ttf') format('truetype');
-}
-
 @font-face{
     font-family: 'Bantayog';
     font-style: normal;
     font-weight: normal;
     src: local(Bantayog), url('../fonts/Bantayog-Regular.woff') format('woff');
 }
+
+@font-face{
+    font-family: 'NidSans';
+    src: local(nidsans-webfont), url('../fonts/nidsans-webfont.woff') format('woff');
+}
+
 html, body{
     height: 100%;
     width: 100%;
@@ -33,11 +17,57 @@ html, body{
     padding: 0;
     color: white;
     background-color: black;
+    text-align: center;
+}
+
+h1{
+    font-family: NidSans;
+    font-size: 40px;
+    padding: 10px;
+    letter-spacing: 8px;
+}
+
+h2{
+    font-family: NidSans;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: 200;
+}
+
+td {
+    font-size: 25px;
+    font-family: Bantayog;
+    padding: 5px;
+}
+
+.title {
+    width: 50%;
+    text-align: right;
+}
+
+.field {
+    width: 50%;
+    text-align: left;
+}
+
+table {
+    width: 100%;
+    font-family : Bantayog;
+    font-size: 13px;
+    font-style: bold;
+    letter-spacing: 1px;
+}
+
+.main-panel{
+    display: none;
+    height: 100%;
+    min-height: 100%;
+    width: 100vw;
+    position: absolute;
 }
 
 #prematch_table, #postmatch_table {
-
-    font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     text-align: center;
     color: white;
     font-size: 13px;
@@ -51,30 +81,28 @@ html, body{
     margin-top: 30px;
 }
 
-#auton_table, #endgame_table, #teleop_table {
-    font-family : Bantayog;
-    font-size: 13px;
-    font-style: bold;
-    letter-spacing: 1px;
+#prematch{
+    background: linear-gradient(150deg, rgba(2,0,36,1) 0%, rgba(237,158,158,1) 0%, rgba(186,229,255,1) 100%);
 }
 
-.button {
-    font-family: EverLooser;
-    font-size: 16px;
-}
-
-#autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
-    color: black;
+input{
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(54, 102, 132);
     border-color: white;
-    border-width: 4px;
+    border-style: solid;
+    border-radius: 5px;
+    font-family: NidSans;
+    padding: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-left: 10px;
 }
 
-#postmatchHeader{
-    border-width: 4px;
-    border-color: white;
+.flipButton, .undoButton{
+    margin: 10px;
 }
 
-#prematchHeader1, #prematchHeader2, #autonHeader1{
+.page_title {
     margin: auto;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -85,203 +113,23 @@ html, body{
     border: 0.2rem solid #fff;
     border-radius: 2rem;
     padding: 0.4em;
-    box-shadow: 0 0 .2rem #fff,
-                0 0 .2rem #fff,
-                0 0 2rem #FF98B0,
-                0 0 0.8rem #FF98B0,
-                0 0 2.8rem #FF98B0,
-                inset 0 0 1.3rem #FF98B0;
+    box-shadow: 0 0 .2rem #fff, 0 0 .2rem #fff, 0 0 2rem #FF98B0, 0 0 0.8rem #FF98B0, 0 0 2.8rem #FF98B0, inset 0 0 1.3rem #FF98B0;
 }
 
 #autonHeader1{
-    box-shadow: 0 0 .2rem #fff,
-                0 0 .2rem #fff,
-                0 0 2rem #9793dd,
-                0 0 0.8rem #9793dd,
-                0 0 2.8rem #9793dd,
-                inset 0 0 1.3rem #9793dd;
-}
-
-#prematchHeader2{
-    border: none;
-    box-shadow: none;
-}
-
-
-#qrHeader1, #qrHeader2 {
-    color: black;
-}
-
-.field-image {
-    margin: 2vw;
+    box-shadow: 0 0 .2rem #fff, 0 0 .2rem #fff,0 0 2rem #9793dd,0 0 0.8rem #9793dd,0 0 2.8rem #9793dd,inset 0 0 1.3rem #9793dd;
 }
 
 .field-image-src{
     background-position: center;
-    border: 1px solid;
-}
-
-.main-panel{
-    display: none;
-    height: 100%;
-    min-height: 100%;
-    width: 100vw;
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: white;
-    background-color: black;
-    font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-    text-align: justify;
 }
 
 #prematch{
     display: table;
 }
 
-#auton{
-}
-
-#teleop{
-}
-
-#endgame{
-}
-
-#postmatch{
-}
-
-#qr-code{
-  text-align: center;
-  color: black;
-}
-
-h1{
-    font-family: Bantayog;
-    text-align: center;
-    border-style: solid;
-    border-color: #FF98B0;
-    border-width: 2px;
-    font-size: 40px;
-    padding: 10px;
-    font-weight: 350;
-}
-
-
-h2{
-    font-family: Bantayog;
-    text-align: center;
-    font-size: 50px;
-    color:#f6c8e1;
-    text-decoration: underline;
-}
-
 .match-label{
     text-align: center;
-}
-
-.half-button-l{
-    width: 48%;
-    margin: 1vw;
-    height: 100%;
-    font: roboto;
-}
-
-.half-button-r{
-    flex-grow: 1;
-    height: 100%;
-    width: 48%;
-    margin: 1vw;
-    font: roboto;
-}
-
-.half-button-container{
-    display: flex;
-}
-
-#nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm, .submitForm, #displayButton, #copyButton {
-    color: rgb(54, 102, 132);
-    border-color: white;
-    border-style: solid;
-    font-family: Bantayog;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    display: inline-block;
-}
-
-#nextButton3, #nextButton4, #nextButton5, #nextButton6, #nextButton7, #nextButton8 {
-    font-family: Alexis;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 10px;
-    color: rgb(54, 102, 132);
-}
-
-.undoButton, .flipButton {
-    font-family: Bantayog;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 10px;
-    color: rgb(54, 102, 132);
-    margin-left: 20px;
-}
-
-#prevButton7, #prevButton8, #prevButton9{
-    font-family: Alexis;
-    background-color: rgb(151, 199, 240);
-    padding: 10px;
-}
-
-#prevButton1, #prevButton2, #prevButton3, #prevButton4, #prevButton5, #prevButton6{
-    font-family: Alexis;
-    background-color: black;
-    padding: 10px;
-    color: white;
-
-}
-
-#prematch_table{
-    text-align: center;
-}
-
-
-table {
-    border: 1px solid black;
-    width: 100%;
-}
-
-td {
-    padding: 10px 4px;
-}
-
-input {
-    font-size: 16px;
-    font: Bantayog;
-    color: rgb(54, 102, 132);
-    background-color: rgba(186,229,255,1);
-    border-color: rgba(186,229,255,1);
-    border-style: solid;
-    border-radius: 5px;
-}
-input[type=radio]{
-    accent-color: rgb(54, 102, 132);
-}
-
-.title {
-    width: "50%";
-    text-align: right;
-}
-
-td {
-    font-size: 25px;
-    font-family: Bantayog;
-}
-
-.field {
-    width: "50%";
-    text-align: left;
 }
 
 #qr-table {
@@ -290,31 +138,11 @@ td {
     background-color: white;
 }
 
-#data {
-    font-family:'Lucida Console', 'monospace';
-    text-align: justify;
+#qrHeader1, #qrHeader2 {
+    color: black;
 }
 
-#prematchHeader1{
-    font-size: 60px;
-    letter-spacing: 5px;
-}
-
-input{
-    background-color:rgba(255, 255, 255, 0.5);
-    border-color: white; 
-}
-
-body{
-    background: rgb(2,0,36);
-    background: linear-gradient(150deg, rgba(2,0,36,1) 0%, rgba(237,158,158,1) 0%, rgba(186,229,255,1) 100%);
-}
-
-#auton, #auton h2{
-    color: rgb(118, 116, 165);
-    border-color: white;
-}
-
-#prematchHeader2{
-    font-family: Bantayog;
-}
+#qr-code{
+    text-align: center;
+    color: black;
+  }
