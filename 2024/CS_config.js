@@ -68,57 +68,39 @@ var config_data = `
   ],
   "auton": [
     { "name": "Notes scored<br>amp",
-      "code": "na",
+      "code": "ana",
       "type": "counter"
     },
     { "name": "Notes scored<br>speaker",
-      "code": "ns",
+      "code": "ans",
       "type": "counter"
     }
   ],
   "teleop": [
     
-    { "name": "Feeder Count<br>(Fed another bot)",
-      "code": "tfc",
+    { "name": "Notes scored<br>amp",
+      "code": "tna",
       "type": "counter"
     },
-    { "name": "Was Fed<br>Game Pieces",
-      "code": "wf",
-      "type": "bool"
+    { "name": "Notes scored<br>speaker",
+      "code": "tns",
+      "type": "counter"
     },
-    { "name": "Was Defended",
-      "code": "wd",
-      "type": "bool"
-    },
-    { "name": "Who Defended this bot",
-      "code": "who",
-      "type": "text"
-    },
-    { "name": "Smart Placement<br>(creates Links)",
-      "code": "lnk",
-      "type": "bool"
+    { "name": "Times Amplified",
+      "code": "tta",
+      "type": "counter"
     },
     { "name": "Floor Pickup",
-      "code": "fpu",
-      "type": "radio",
-      "choices": {
-        "o": "Cones<br>",
-        "u": "Cubes<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
-      },
-      "defaultValue": "x"
+      "code": "tfp",
+      "type": "counter"
     },
-    { "name": "Substation Use",
-      "code": "sub",
-      "type": "radio",
-      "choices": {
-        "1": "Single<br>",
-        "2": "Double<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
-      },
-      "defaultValue": "x"
+    { "name": "Source Pickup",
+      "code": "tsp",
+      "type": "counter"
+    },
+    { "name": "Ground Pickup",
+      "code": "gpu",
+      "type": "counter"
     }
   ],
   "endgame": [
